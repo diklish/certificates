@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--
+Licensee: Dmitry Klishin
+License Type: Evaluation
+-->
+<hibernate-mapping>
+	<class lazy="false" name="orm.KatPov" table="KatPov">
+		<id column="katPovID" name="katPovID" type="integer" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="katPovName" lazy="false" length="50" name="katPovName" not-null="true" type="string"/>
+		<property column="katPovFullName" lazy="false" length="100" name="katPovFullName" not-null="true" type="string"/>
+		<set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Nomenclature">
+			<key column="KatPovkatPovID" not-null="true"/>
+			<one-to-many class="orm.Nomenclature"/>
+		</set>
+	</class>
+</hibernate-mapping>

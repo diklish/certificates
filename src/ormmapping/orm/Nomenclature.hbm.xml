@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--
+Licensee: Dmitry Klishin
+License Type: Evaluation
+-->
+<hibernate-mapping>
+	<class lazy="false" name="orm.Nomenclature" table="Nomenclature">
+		<id column="nomID" name="nomID" type="integer" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="nomName" lazy="false" length="50" name="nomName" not-null="true" type="string"/>
+		<property column="nomFulName" lazy="false" length="100" name="nomFulName" not-null="true" type="string"/>
+		<property column="nomTimes" lazy="false" name="nomTimes" not-null="false" type="timestamp"/>
+		<many-to-one access="field" cascade="lock" class="orm.Nomenclature" column="parentID" lazy="no-proxy" name="parent" not-null="true"/>
+		<property column="nomID1C" lazy="false" length="50" name="nomID1C" not-null="true" type="string"/>
+		<property column="parentID1C" lazy="false" length="50" name="parentID1C" not-null="true" type="string"/>
+		<many-to-one access="field" cascade="lock" class="orm.Seriy" column="SeriyseriyID" lazy="no-proxy" name="seriyseriy" not-null="true"/>
+		<many-to-one access="field" cascade="lock" class="orm.Stal" column="StalstalID" lazy="no-proxy" name="stalstal" not-null="true"/>
+		<many-to-one access="field" cascade="lock" class="orm.AntiKor" column="AntiKorantiKorID" lazy="no-proxy" name="antiKorantiKor" not-null="true"/>
+		<many-to-one access="field" cascade="lock" class="orm.KatPov" column="KatPovkatPovID" lazy="no-proxy" name="katPovkatPov" not-null="true"/>
+		<many-to-one access="field" cascade="lock" class="orm.TU" column="TUtuID" lazy="no-proxy" name="TUtu" not-null="true"/>
+		<many-to-one access="field" cascade="lock" class="orm.Users" column="UsersuserrID" lazy="no-proxy" name="usersuserr" not-null="true"/>
+		<property column="numberOfNom" lazy="false" length="15" name="numberOfNom" not-null="false" type="string"/>
+		<property lazy="false" name="isFolder" not-null="false" type="boolean">
+			<column default="false" name="isFolder"/>
+		</property>
+		<many-to-one access="field" cascade="lock" class="orm.Marka" column="markamarcaid" lazy="no-proxy" name="markamarca1" not-null="false"/>
+		<set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Nomenclature">
+			<key column="parentID" not-null="true"/>
+			<one-to-many class="orm.Nomenclature"/>
+		</set>
+		<set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Certif_Nomenclature">
+			<key column="NomenclaturenomID" not-null="true"/>
+			<one-to-many class="orm.Certif_Nomenclature"/>
+		</set>
+	</class>
+</hibernate-mapping>

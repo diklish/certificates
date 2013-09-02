@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--
+Licensee: Dmitry Klishin
+License Type: Evaluation
+-->
+<hibernate-mapping>
+	<class lazy="false" name="orm.Seriy" table="Seriy">
+		<id column="seriyID" name="seriyID" type="integer" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="seriyName" lazy="false" length="50" name="seriyName" not-null="true" type="string"/>
+		<property column="seriyFullName" lazy="false" length="100" name="seriyFullName" not-null="true" type="string"/>
+		<property column="Ref" lazy="false" length="50" name="ref" not-null="true" type="string"/>
+		<set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Nomenclature">
+			<key column="SeriyseriyID" not-null="true"/>
+			<one-to-many class="orm.Nomenclature"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TextReport" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="792" leftMargin="25" rightMargin="25" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.098075000000002"/>
+	<property name="ireport.x" value="84"/>
+	<property name="ireport.y" value="155"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="net.sf.jasperreports.export.text.character.width" value="7.238"/>
+	<property name="net.sf.jasperreports.export.text.character.height" value="13.948"/>
+	<style name="FixSizeFontStyle" isDefault="true" fontName="Times New Roman" fontSize="12" pdfEncoding="Cp1251" pdfFontName="reports/fonts/times.ttf" isPdfEmbedded="true"/>
+	<style name="numStile" fontName="Times New Roman" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" pdfFontName="reports/fonts/times.ttf" isPdfEmbedded="true" />
+	<style name="Head" fontName="Times New Roman" fontSize="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" pdfFontName="reports/fonts/timesbd.ttf" isPdfEmbedded="true" />
+	<parameter name="dateDoc" class="java.lang.String"/>
+	<parameter name="dateIzg" class="java.lang.String"/>
+	<parameter name="factPr" class="java.lang.String"/>
+	<parameter name="katPov" class="java.lang.String"/>
+	<parameter name="marka" class="java.lang.String"/>
+	<parameter name="markaMPZ" class="java.lang.String"/>
+	<parameter name="markaSt" class="java.lang.String"/>
+	<parameter name="nameOfnom" class="java.lang.String"/>
+	<parameter name="numberOfCh" class="java.lang.String"/>
+	<parameter name="numberOfIzd" class="java.lang.String"/>
+	<parameter name="numberOfPas" class="java.lang.String"/>
+	<parameter name="partN" class="java.lang.String"/>
+	<parameter name="peredPr" class="java.lang.String"/>
+	<parameter name="prochOtp" class="java.lang.String"/>
+	<parameter name="trebOtpPr" class="java.lang.String"/>
+	<parameter name="trebOtpPrKg" class="java.lang.String"/>
+	<parameter name="TU" class="java.lang.String"/>
+	<parameter name="vidAnt" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<columnHeader>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="138" height="45"/>
+				<textElement/>
+				<text><![CDATA[ЗАО Завод ЖБИ-100  656922, г.Барнаул, а/я 1188 пр. Энергетиков, 37А]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Head" x="84" y="58" width="219" height="20"/>
+				<text><![CDATA[Копия паспорта № ___________]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement style="Head" x="214" y="58" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{numberOfPas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="393" y="0" width="141" height="45"/>
+				<textElement/>
+				<text><![CDATA[ЗАО Завод ЖБИ-100  656922, г.Барнаул, а/я 1188 пр. Энергетиков, 37А]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Head" x="476" y="58" width="219" height="20"/>
+				<text><![CDATA[Паспорт № __________]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement style="Head" x="554" y="58" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{numberOfPas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="477" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement positionType="Float" x="40" y="12" width="75" height="20"/>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{dateDoc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="12" width="203" height="20"/>
+				<textElement/>
+				<text><![CDATA[Выдан ______________ дата]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="32" width="203" height="20"/>
+				<textElement/>
+				<text><![CDATA[Наименование и марка изделий]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="0" y="66" width="378" height="1"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.35"/>
+				</graphicElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="0" y="82" width="378" height="1"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.35"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="0" y="52" width="378" height="47"/>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nameOfnom}]]></textFieldExpression>
+			</textField>
+			<line direction="BottomUp">
+				<reportElement x="0" y="98" width="378" height="1"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.35"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="58" y="99" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{partN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="numStile" x="2" y="99" width="378" height="20"/>
+				<textElement/>
+				<text><![CDATA[партия № _________ к-во изд. ___________ Дата изг. ________________]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="168" y="98" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{numberOfIzd}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="282" y="99" width="77" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{dateIzg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="numStile" x="0" y="119" width="380" height="20"/>
+				<textElement/>
+				<text><![CDATA[Проектная марка бетона _________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="139" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[отпускн. прочность бетона, процент _______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="159" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Требуемая отпускная прочность (при коэф. вариации прочность  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="199" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Фактическая отпускная прочность, кг/см2 ___________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="179" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[бетона на  ___________%), кгс.см2 _______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="219" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Передаточная прочность бетона, % _________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="239" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Марка бетона по МРЗ ________________________ водонепроницаемость]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="259" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Марка стали закладных и выпусков арматуры _______________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="279" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Вид антикоррозийнного покрытия  ________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="299" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Категория лицевых бетонных поверхностей _________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="319" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Обозначение стандарта (ТУ) ______________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="339" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Номер серии и выпуска раб. чертежей ______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="359" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Предприятие гарантирует, что прочность бетона (при хранении контр.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="379" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[образцов в нормальных условиях по ГОСТ 10180-78 ) достигает]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="399" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[требуемой прочности ______________ кг/см2, соответствующей марке]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="0" y="419" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[в возрасте бетона 28 сут. со дня изготовления изделия.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="203" y="454" width="179" height="16"/>
+				<textElement/>
+				<text><![CDATA[ОТК ____________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="258" y="466" width="67" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[фамилия, подпись]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="199" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Фактическая отпускная прочность, кг/см2 ___________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="179" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[бетона на  ___________%), кгс.см2 _______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="359" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Предприятие гарантирует, что прочность бетона (при хранении контр.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="259" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Марка стали закладных и выпусков арматуры _______________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="279" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Вид антикоррозийнного покрытия  ________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="239" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Марка бетона по МРЗ ________________________ водонепроницаемость]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="411" y="99" width="378" height="20"/>
+				<textElement/>
+				<text><![CDATA[партия № _________ к-во изд. ___________ Дата изг. ________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="612" y="454" width="179" height="16"/>
+				<textElement/>
+				<text><![CDATA[ОТК ____________________]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="695" y="99" width="77" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{dateIzg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="numStile" x="409" y="379" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[образцов в нормальных условиях по ГОСТ 10180-78 ) достигает]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="139" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[отпускн. прочность бетона, процент _______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="319" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Обозначение стандарта (ТУ) ______________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="299" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Категория лицевых бетонных поверхностей _________________________]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement positionType="Float" x="449" y="12" width="75" height="20"/>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{dateDoc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="numStile" x="409" y="399" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[требуемой прочности ______________ кг/см2, соответствующей марке]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="119" width="380" height="20"/>
+				<textElement/>
+				<text><![CDATA[Проектная марка бетона _________________________________________]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="467" y="99" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{partN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="numStile" x="667" y="466" width="67" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[фамилия, подпись]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="409" y="64" width="378" height="1"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.35"/>
+				</graphicElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="409" y="98" width="378" height="1"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.35"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="numStile" x="409" y="339" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Номер серии и выпуска раб. чертежей ______________________________]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="575" y="98" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{numberOfIzd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="numStile" x="409" y="159" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Требуемая отпускная прочность (при коэф. вариации прочность  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="419" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[в возрасте бетона 28 сут. со дня изготовления изделия.]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="409" y="80" width="378" height="1"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.35"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="409" y="32" width="203" height="20"/>
+				<textElement/>
+				<text><![CDATA[Наименование и марка изделий]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="12" width="203" height="20"/>
+				<textElement/>
+				<text><![CDATA[Выдан ______________ дата]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="numStile" x="409" y="219" width="382" height="20"/>
+				<textElement/>
+				<text><![CDATA[Передаточная прочность бетона, % _________________________________]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" isPrintRepeatedValues="false" x="409" y="52" width="382" height="46"/>
+				<textElement>
+					<font size="12" isBold="false" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nameOfnom}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="138" y="119" width="201" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{marka}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="554" y="118" width="201" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{marka}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="192" y="139" width="186" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{prochOtp}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="605" y="139" width="186" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{prochOtp}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="58" y="179" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{trebOtpPr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="192" y="179" width="133" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{trebOtpPrKg}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="601" y="179" width="133" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{trebOtpPrKg}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="467" y="179" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{trebOtpPr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="225" y="199" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{factPr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="632" y="199" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{factPr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="192" y="219" width="133" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{peredPr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="601" y="219" width="133" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{peredPr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="125" y="239" width="133" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{markaMPZ}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="534" y="239" width="133" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{markaMPZ}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="245" y="259" width="133" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{markaSt}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="654" y="259" width="133" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{markaSt}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="192" y="279" width="167" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{vidAnt}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="620" y="279" width="167" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{vidAnt}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="242" y="299" width="167" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{katPov}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="632" y="299" width="159" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{katPov}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="214" y="319" width="167" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{TU}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="625" y="319" width="167" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{TU}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="214" y="339" width="167" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{numberOfCh}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="625" y="339" width="167" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{numberOfCh}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="535" y="399" width="66" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{marka}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="numStile" x="124" y="399" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{marka}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--
+Licensee: Dmitry Klishin
+License Type: Evaluation
+-->
+<hibernate-mapping>
+	<class lazy="false" name="orm.Stal" table="Stal">
+		<id column="stalID" name="stalID" type="integer" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="stalName" lazy="false" length="50" name="stalName" not-null="true" type="string"/>
+		<property column="stalFullName" lazy="false" length="100" name="stalFullName" not-null="true" type="string"/>
+		<set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Nomenclature">
+			<key column="StalstalID" not-null="true"/>
+			<one-to-many class="orm.Nomenclature"/>
+		</set>
+	</class>
+</hibernate-mapping>

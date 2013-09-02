@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--
+Licensee: Dmitry Klishin
+License Type: Evaluation
+-->
+<hibernate-mapping>
+	<class lazy="false" name="orm.Certif_Nomenclature" table="Certif_Nomenclature">
+		<id column="CertID" name="certID" type="integer" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<many-to-one access="field" cascade="lock" class="orm.Certif" column="CertifcertifID" lazy="no-proxy" name="certifcertif" not-null="true"/>
+		<property column="NumberOfProd" lazy="false" length="10" name="numberOfProd" not-null="false" type="integer"/>
+		<many-to-one access="field" cascade="lock" class="orm.Nomenclature" column="NomenclaturenomID" lazy="no-proxy" name="nomenclaturenom" not-null="true"/>
+		<property lazy="false" name="countN" not-null="true" type="integer">
+			<column default="1" name="CountN"/>
+		</property>
+	</class>
+</hibernate-mapping>

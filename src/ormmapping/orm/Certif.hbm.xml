@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--
+Licensee: Dmitry Klishin
+License Type: Evaluation
+-->
+<hibernate-mapping>
+	<class lazy="false" name="orm.Certif" table="Certif">
+		<id column="certifID" name="certifID" type="integer" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="NumberOfCert" lazy="false" length="15" name="numberOfCert" not-null="false" type="string"/>
+		<property column="certifTimes" lazy="false" name="certifTimes" not-null="false" type="timestamp"/>
+		<many-to-one access="field" cascade="lock" class="orm.Users" column="UsersuserrID" lazy="no-proxy" name="usersuserr" not-null="true"/>
+		<many-to-one access="field" cascade="lock" class="orm.Part" column="PartpartID" lazy="no-proxy" name="partpart" not-null="true"/>
+		<property column="MarcaMPZ" lazy="false" length="10" name="marcaMPZ" not-null="false" type="string"/>
+		<set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Certif_Nomenclature">
+			<key column="CertifcertifID" not-null="true"/>
+			<one-to-many class="orm.Certif_Nomenclature"/>
+		</set>
+	</class>
+</hibernate-mapping>

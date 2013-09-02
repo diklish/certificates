@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--
+Licensee: Dmitry Klishin
+License Type: Evaluation
+-->
+<hibernate-mapping>
+	<class lazy="false" name="orm.Part" table="Part">
+		<id column="partID" name="partID" type="integer" unsaved-value="0">
+			<generator class="native"/>
+		</id>
+		<property column="partDate" lazy="false" name="partDate" not-null="false" type="timestamp"/>
+		<property column="partProchPro" lazy="false" length="10" name="partProchPro" not-null="true" type="integer"/>
+		<property column="partProchFact" lazy="false" length="10" name="partProchFact" not-null="true" type="integer"/>
+		<property column="Nomenklature" lazy="false" length="100" name="nomenklature" not-null="false" type="string"/>
+		<property column="marka" lazy="false" length="30" name="marka" not-null="false" type="string"/>
+		<property column="NumberOfPart" lazy="false" name="numberOfPart" not-null="false" type="integer"/>
+		<many-to-one access="field" cascade="lock" class="orm.Users" column="UsersuserrID" lazy="no-proxy" name="usersuserr" not-null="true"/>
+		<set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Certif">
+			<key column="PartpartID" not-null="true"/>
+			<one-to-many class="orm.Certif"/>
+		</set>
+	</class>
+</hibernate-mapping>
